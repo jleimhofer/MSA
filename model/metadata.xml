@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
+			Namespace="ZY_WS1415_T2_STSA_SRV" xml:lang="en" sap:schema-version="1 ">
+			<EntityType Name="Manual" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ManualId" />
+				</Key>
+				<Property Name="Mandt" Type="Edm.String" Nullable="false"
+					MaxLength="3" sap:label="Client" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ManualId" Type="Edm.Int32" Nullable="false"
+					sap:label="Manual ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="TypeId" Type="Edm.Int32" Nullable="false"
+					sap:label="M.-Type ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="Name" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Content" Type="Edm.String" Nullable="false"
+					MaxLength="255" sap:label="Comment Content" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Deleted" Type="Edm.Byte" Nullable="false"
+					sap:label="SMALL INTEGER" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="Comment" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="CommentId" />
+				</Key>
+				<Property Name="Mandt" Type="Edm.String" Nullable="false"
+					MaxLength="3" sap:label="Client" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CommentId" Type="Edm.Int32" Nullable="false"
+					sap:label="Comment ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="TicketId" Type="Edm.Int32" Nullable="false"
+					sap:label="Ticket ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" />
+				<Property Name="Content" Type="Edm.String" Nullable="false"
+					MaxLength="255" sap:label="Comment Content" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Deleted" Type="Edm.Byte" Nullable="false"
+					sap:label="SMALL INTEGER" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="TroubleTicket" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="TicketId" />
+				</Key>
+				<Property Name="Mandt" Type="Edm.String" Nullable="false"
+					MaxLength="3" sap:label="Client" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="TicketId" Type="Edm.Int32" Nullable="false"
+					sap:label="Ticket ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="MachineId" Type="Edm.Int32" Nullable="false"
+					sap:label="Machine ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="TechnicianId" Type="Edm.Int32" Nullable="false"
+					sap:label="Technician ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" />
+				<Property Name="Status" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Ticket Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreateDate" Type="Edm.DateTime" Nullable="false"
+					Precision="7" sap:label="Ticket Create Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ResolveDate" Type="Edm.DateTime" Nullable="false"
+					Precision="7" sap:label="Ticket Resolve Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Description" Type="Edm.String" Nullable="false"
+					MaxLength="100" sap:label="Ti. Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Priority" Type="Edm.Byte" Nullable="false"
+					sap:label="Ticket Priority" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="Deleted" Type="Edm.Byte" Nullable="false"
+					sap:label="SMALL INTEGER" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="TroubleTicketView" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="TicketId" />
+				</Key>
+				<Property Name="Mandt" Type="Edm.String" Nullable="false"
+					MaxLength="3" sap:label="Client" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="TicketId" Type="Edm.Int32" Nullable="false"
+					sap:label="Ticket ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="Status" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Ticket Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreateDate" Type="Edm.DateTime" Nullable="false"
+					Precision="7" sap:label="Ticket Create Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ResolveDate" Type="Edm.DateTime" Nullable="false"
+					Precision="7" sap:label="Ticket Resolve Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Description" Type="Edm.String" Nullable="false"
+					MaxLength="100" sap:label="Ti. Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Priority" Type="Edm.Byte" Nullable="false"
+					sap:label="Ticket Priority" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="MachineId" Type="Edm.Int32" Nullable="false"
+					sap:label="Machine ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="TypeId" Type="Edm.Int32" Nullable="false"
+					sap:label="M.-Type ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="TypeName" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Mach. Type Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CustomerId" Type="Edm.Int32" Nullable="false"
+					sap:label="Customer ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="Title" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Customer Title" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Location" Type="Edm.String" Nullable="false"
+					MaxLength="80" sap:label="Cust. Location" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="TechnicianId" Type="Edm.Int32" Nullable="false"
+					sap:label="Technician ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" />
+				<Property Name="Firstname" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="First Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Lastname" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Last Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="PhoneNumber" Type="Edm.String" Nullable="false"
+					MaxLength="15" sap:label="Phone Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Deleted" Type="Edm.Byte" Nullable="false"
+					sap:label="SMALL INTEGER" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="Credential" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Username" />
+				</Key>
+				<Property Name="Username" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Username" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Password" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Password" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Type" Type="Edm.Byte" Nullable="false"
+					sap:label="SMALL INTEGER" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="Valid" Type="Edm.Byte" Nullable="false"
+					sap:label="SMALL INTEGER" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="Id" Type="Edm.Int32" Nullable="false"
+					sap:label="ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+			</EntityType>
+			<EntityContainer Name="ZY_WS1415_T2_STSA_SRV_Entities"
+				m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+				<EntitySet Name="ManualSet" EntityType="ZY_WS1415_T2_STSA_SRV.Manual"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:content-version="1" />
+				<EntitySet Name="CommentSet" EntityType="ZY_WS1415_T2_STSA_SRV.Comment"
+					sap:updatable="false" sap:deletable="false" sap:pageable="false"
+					sap:content-version="1" />
+				<EntitySet Name="TroubleTicketSet" EntityType="ZY_WS1415_T2_STSA_SRV.TroubleTicket"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false"
+					sap:content-version="1" />
+				<EntitySet Name="TroubleTicketViewSet" EntityType="ZY_WS1415_T2_STSA_SRV.TroubleTicketView"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:content-version="1" />
+				<EntitySet Name="CredentialSet" EntityType="ZY_WS1415_T2_STSA_SRV.Credential"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:content-version="1" />
+			</EntityContainer>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="http://i67lp1.informatik.tu-muenchen.de:8000/sap/opu/odata/sap/ZY_WS1415_T2_STSA_SRV/$metadata" />
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="http://i67lp1.informatik.tu-muenchen.de:8000/sap/opu/odata/sap/ZY_WS1415_T2_STSA_SRV/$metadata" />
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

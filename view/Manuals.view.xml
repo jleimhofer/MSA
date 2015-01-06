@@ -1,0 +1,13 @@
+<sap.ui.core.mvc:View controllerName="STSA.view.Manuals"
+    xmlns="sap.m"
+    xmlns:sap.ui.core.mvc="sap.ui.core.mvc" >
+    <Dialog id="manualsDialog" title="Manuals" width="100%" minWidth="600px" stretchOnPhone="true">
+        <content>
+            <List id="manualList" select="onManualSelected" mode="{device>/listMode}" noDataText="{i18n>masterListNoDataText}" growing="true" growingScrollToLoad="true" items="{/ManualSet}">
+                <items>
+                    <ObjectListItem type="{device>/listItemType}" counter="0" title="{Content}" markFavorite="false" markFlagged="false" showMarkers="false" press="onManualSelected"></ObjectListItem>
+                </items>
+            </List>
+        </content>
+    </Dialog>
+</sap.ui.core.mvc:View>

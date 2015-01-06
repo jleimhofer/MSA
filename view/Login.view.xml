@@ -1,0 +1,14 @@
+<core:View height="100%" controllerName="STSA.view.Login"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="loginPage" enableScrolling="false" title="Login">
+		<VBox fitContainer="true" justifyContent="Center" alignItems="Center">
+			<Label id="blLogin" text="Username" design="Bold" labelFor="inpLogin" />
+			<Input id="inpLogin" editable="true" value="" maxLength="20" />
+			<Label id="lblPWD" text="Password" design="Bold" labelFor="inpPWD" />
+			<Input id="inpPWD" type="Password" editable="true" value=""
+				maxLength="20" />
+			<Button id="bntLogin" text="Login" tap="actLogin" />
+		</VBox>
+	</Page>
+</core:View>
