@@ -1,6 +1,6 @@
-jQuery.sap.declare("STSA.util.Formatter");
+jQuery.sap.declare("MSA.util.Formatter");
 
-STSA.util.Formatter = {
+MSA.util.Formatter = {
 
 	uppercaseFirstChar : function(sStr) {
 		return sStr.charAt(0).toUpperCase() + sStr.slice(1);

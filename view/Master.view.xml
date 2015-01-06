@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="STSA.view.Master"
+	controllerName="MSA.view.Master"
 	displayBlock="true"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">

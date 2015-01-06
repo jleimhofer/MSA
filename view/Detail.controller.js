@@ -1,7 +1,7 @@
-jQuery.sap.require("STSA.util.Formatter");
-jQuery.sap.require("STSA.util.Controller");
+jQuery.sap.require("MSA.util.Formatter");
+jQuery.sap.require("MSA.util.Controller");
 
-STSA.util.Controller.extend("STSA.view.Detail", {
+MSA.util.Controller.extend("MSA.view.Detail", {
 
 	onInit : function() {
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
@@ -68,7 +68,7 @@ STSA.util.Controller.extend("STSA.view.Detail", {
 	showEmptyView : function () {
 		this.getRouter().myNavToWithoutHash({ 
 			currentView : this.getView(),
-			targetViewName : "STSA.view.NotFound",
+			targetViewName : "MSA.view.NotFound",
 			targetViewType : "XML"
 		});
 	},
@@ -239,7 +239,7 @@ STSA.util.Controller.extend("STSA.view.Detail", {
 	    
 		var locationView = sap.ui.view({
 			type:sap.ui.core.mvc.ViewType.XML, 
-			viewName:"STSA.view.Location"
+			viewName:"MSA.view.Location"
 		});
 		locationView.setModel(this.getView().getModel());
 

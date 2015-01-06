@@ -1,4 +1,4 @@
-<sap.ui.core.mvc:View controllerName="STSA.view.Detail"
+<sap.ui.core.mvc:View controllerName="MSA.view.Detail"
     xmlns="sap.m"
     xmlns:sap.ui.core.mvc="sap.ui.core.mvc" >
     <Page navButtonPress="onNavBack" title="{i18n>detailTitle}" showNavButton="{device>/isPhone}">

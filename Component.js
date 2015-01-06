@@ -1,7 +1,7 @@
-jQuery.sap.declare("STSA.Component");
-jQuery.sap.require("STSA.MyRouter");
+jQuery.sap.declare("MSA.Component");
+jQuery.sap.require("MSA.MyRouter");
 
-sap.ui.core.UIComponent.extend("STSA.Component", {
+sap.ui.core.UIComponent.extend("MSA.Component", {
 	metadata : {
 		name : "TDG Demo App",
 		version : "1.0",
@@ -11,21 +11,21 @@ sap.ui.core.UIComponent.extend("STSA.Component", {
 			components : []
 		},
 
-		rootView : "STSA.view.App",
+		rootView : "MSA.view.App",
 
 		config : {
 			resourceBundle : "i18n/messageBundle.properties",
 			serviceConfig : {
-				name: "ZY_WS1415_T2_STSA_SRV",
-				serviceUrl: "/sap/opu/odata/sap/ZY_WS1415_T2_STSA_SRV/"
+				name: "ZY_WS1415_T2_MSA_SRV",
+				serviceUrl: "/sap/opu/odata/sap/ZY_WS1415_T2_MSA_SRV/"
 			}
 		},
 
 		routing : {
 			config : {
-				routerClass : STSA.MyRouter,
+				routerClass : MSA.MyRouter,
 				viewType : "XML",
-				viewPath : "STSA.view",
+				viewPath : "MSA.view",
 				targetAggregation : "detailPages",
 				clearTarget : false
 			},
@@ -69,7 +69,7 @@ sap.ui.core.UIComponent.extend("STSA.Component", {
 
 		// always use absolute paths relative to our own component
 		// (relative paths will fail if running in the Fiori Launchpad)
-		var oRootPath = jQuery.sap.getModulePath("STSA");
+		var oRootPath = jQuery.sap.getModulePath("MSA");
 
 		// set i18n model
 		var i18nModel = new sap.ui.model.resource.ResourceModel({
@@ -109,7 +109,7 @@ sap.ui.core.UIComponent.extend("STSA.Component", {
 		// present login view
 		var loginView = sap.ui.view({
 			type:sap.ui.core.mvc.ViewType.XML, 
-			viewName:"STSA.view.Login"
+			viewName:"MSA.view.Login"
 		});
 		loginView.setModel(this.getModel());
 		

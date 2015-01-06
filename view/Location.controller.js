@@ -1,12 +1,12 @@
-jQuery.sap.require("STSA.util.Formatter");
-jQuery.sap.require("STSA.util.Controller");
+jQuery.sap.require("MSA.util.Formatter");
+jQuery.sap.require("MSA.util.Controller");
 
-STSA.util.Controller.extend("STSA.view.Location", {
+MSA.util.Controller.extend("MSA.view.Location", {
 
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-* @memberOf STSA.view.Location
+* @memberOf MSA.view.Location
 */
  onInit: function () {  
         this.getView().byId("map_canvas").addStyleClass("myMap");

@@ -1,4 +1,4 @@
-<core:View id="locationView" height="100%" controllerName="STSA.view.Location"   
+<core:View id="locationView" height="100%" controllerName="MSA.view.Location"   
      xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"   
      xmlns:html="http://www.w3.org/1999/xhtml">      
     <Dialog id="mapDialog" enableScrolling="false" title="Location">  

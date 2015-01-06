@@ -1,8 +1,8 @@
 jQuery.sap.require("sap.m.routing.RouteMatchedHandler");
 jQuery.sap.require("sap.ui.core.routing.Router");
-jQuery.sap.declare("STSA.MyRouter");
+jQuery.sap.declare("MSA.MyRouter");
 
-sap.ui.core.routing.Router.extend("STSA.MyRouter", {
+sap.ui.core.routing.Router.extend("MSA.MyRouter", {
 
 	constructor : function() {
 		sap.ui.core.routing.Router.apply(this, arguments);

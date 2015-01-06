@@ -1,7 +1,7 @@
-jQuery.sap.require("STSA.util.Formatter");
-jQuery.sap.require("STSA.util.Controller");
+jQuery.sap.require("MSA.util.Formatter");
+jQuery.sap.require("MSA.util.Controller");
 
-STSA.util.Controller.extend("STSA.view.Login",  {  
+MSA.util.Controller.extend("MSA.view.Login",  {  
     actLogin: function () {  
         var oEntry = {};
         oEntry.Username = this.byId("inpLogin").getValue();

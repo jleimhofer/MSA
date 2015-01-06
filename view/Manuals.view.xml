@@ -1,4 +1,4 @@
-<sap.ui.core.mvc:View controllerName="STSA.view.Manuals"
+<sap.ui.core.mvc:View controllerName="MSA.view.Manuals"
     xmlns="sap.m"
     xmlns:sap.ui.core.mvc="sap.ui.core.mvc" >
     <Dialog id="manualsDialog" title="Manuals" width="100%" minWidth="600px" stretchOnPhone="true">

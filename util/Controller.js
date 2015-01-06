@@ -1,6 +1,6 @@
-jQuery.sap.declare("STSA.util.Controller");
+jQuery.sap.declare("MSA.util.Controller");
 
-sap.ui.core.mvc.Controller.extend("STSA.util.Controller", {
+sap.ui.core.mvc.Controller.extend("MSA.util.Controller", {
 	getEventBus : function () {
 		return sap.ui.getCore().getEventBus();
 	},

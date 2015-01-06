@@ -1,7 +1,7 @@
-jQuery.sap.require("STSA.util.Formatter");
-jQuery.sap.require("STSA.util.Controller");
+jQuery.sap.require("MSA.util.Formatter");
+jQuery.sap.require("MSA.util.Controller");
 
-STSA.util.Controller.extend("STSA.view.Master", {
+MSA.util.Controller.extend("MSA.view.Master", {
 
 	onInit : function() {
 	    
@@ -45,7 +45,7 @@ STSA.util.Controller.extend("STSA.view.Master", {
 		//Load the detail view in desktop
 		this.getRouter().myNavToWithoutHash({ 
 			currentView : this.getView(),
-			targetViewName : "STSA.view.Detail",
+			targetViewName : "MSA.view.Detail",
 			targetViewType : "XML"
 		});
 
@@ -118,7 +118,7 @@ STSA.util.Controller.extend("STSA.view.Master", {
 	},
 	
 	onLiveChange : function(oEvent) {
-		jQuery.sap.require("STSA.util.Utility");
+		jQuery.sap.require("MSA.util.Utility");
 		search(this.getView(), oEvent.getParameters().newValue, "list");
     }
 });
