@@ -16,8 +16,8 @@ sap.ui.core.UIComponent.extend("MSA.Component", {
 		config : {
 			resourceBundle : "i18n/messageBundle.properties",
 			serviceConfig : {
-				name: "ZY_WS1415_T2_MSA_SRV",
-				serviceUrl: "/sap/opu/odata/sap/ZY_WS1415_T2_MSA_SRV/"
+				name: "ZY_WS1415_T2_STSA_SRV",
+				serviceUrl: "/sap/opu/odata/sap/ZY_WS1415_T2_STSA_SRV/"
 			}
 		},
 
@@ -105,38 +105,41 @@ sap.ui.core.UIComponent.extend("MSA.Component", {
 		
 		// global variables are going to be stored within this object
 		sap.ui.getCore().AppContext = new Object();
+		sap.ui.getCore().AppContext.TechnicianId = 4;
  
 		// present login view
-		var loginView = sap.ui.view({
-			type:sap.ui.core.mvc.ViewType.XML, 
-			viewName:"MSA.view.Login"
-		});
-		loginView.setModel(this.getModel());
+// 		var loginView = sap.ui.view({
+// 			type:sap.ui.core.mvc.ViewType.XML, 
+// 			viewName:"MSA.view.Login"
+// 		});
+// 		loginView.setModel(this.getModel());
 		
-		var oLoginDialog = new sap.m.Dialog({
-			modal : true,
-			content : [ loginView ],
-			title: "Technician"
-		});
-        sap.ui.getCore().AppContext.LoginDialog = oLoginDialog;
+// 		var oLoginDialog = new sap.m.Dialog({
+// 			modal : true,
+// 			content : [ loginView ],
+// 			title: "Technician"
+// 		});
+//         sap.ui.getCore().AppContext.LoginDialog = oLoginDialog;
 		
-		oLoginDialog.setContentWidth("100%");
-        oLoginDialog.setContentHeight("100%");
-        var self = this;
-        oLoginDialog.attachAfterClose(function(oEvent)  {
-            if(sap.ui.getCore().AppContext.ValidUser)
-            {
-                // start application if user is valid
-    		    self.getRouter().initialize();
-            }
-            else
-            {
-                // if user has closed login window without valid login
-                self.destroy();
-            }
-        });
+// 		oLoginDialog.setContentWidth("100%");
+//         oLoginDialog.setContentHeight("100%");
+//         var self = this;
+//         oLoginDialog.attachAfterClose(function(oEvent)  {
+//             if(sap.ui.getCore().AppContext.ValidUser)
+//             {
+//                 // start application if user is valid
+//     		    self.getRouter().initialize();
+//             }
+//             else
+//             {
+//                 // if user has closed login window without valid login
+//                 self.destroy();
+//             }
+//         });
         
-		oLoginDialog.open();
+// 		oLoginDialog.open();
+        this.getRouter().initialize();
+
 	},
 
 	_startMockServer : function (sServiceUrl) {

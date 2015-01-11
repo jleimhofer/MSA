@@ -4,7 +4,7 @@
 	xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
 	<edmx:DataServices m:DataServiceVersion="2.0">
 		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
-			Namespace="ZY_WS1415_T2_MSA_SRV" xml:lang="en" sap:schema-version="1 ">
+			Namespace="ZY_WS1415_T2_STSA_SRV" xml:lang="en" sap:schema-version="1 ">
 			<EntityType Name="Manual" sap:content-version="1">
 				<Key>
 					<PropertyRef Name="ManualId" />
@@ -162,28 +162,28 @@
 					sap:label="ID" sap:creatable="false" sap:updatable="false"
 					sap:sortable="false" sap:filterable="false" />
 			</EntityType>
-			<EntityContainer Name="ZY_WS1415_T2_MSA_SRV_Entities"
+			<EntityContainer Name="ZY_WS1415_T2_STSA_SRV_Entities"
 				m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
-				<EntitySet Name="ManualSet" EntityType="ZY_WS1415_T2_MSA_SRV.Manual"
+				<EntitySet Name="ManualSet" EntityType="ZY_WS1415_T2_STSA_SRV.Manual"
 					sap:creatable="false" sap:updatable="false" sap:deletable="false"
 					sap:pageable="false" sap:content-version="1" />
-				<EntitySet Name="CommentSet" EntityType="ZY_WS1415_T2_MSA_SRV.Comment"
+				<EntitySet Name="CommentSet" EntityType="ZY_WS1415_T2_STSA_SRV.Comment"
 					sap:updatable="false" sap:deletable="false" sap:pageable="false"
 					sap:content-version="1" />
-				<EntitySet Name="TroubleTicketSet" EntityType="ZY_WS1415_T2_MSA_SRV.TroubleTicket"
+				<EntitySet Name="TroubleTicketSet" EntityType="ZY_WS1415_T2_STSA_SRV.TroubleTicket"
 					sap:creatable="false" sap:deletable="false" sap:pageable="false"
 					sap:content-version="1" />
-				<EntitySet Name="TroubleTicketViewSet" EntityType="ZY_WS1415_T2_MSA_SRV.TroubleTicketView"
+				<EntitySet Name="TroubleTicketViewSet" EntityType="ZY_WS1415_T2_STSA_SRV.TroubleTicketView"
 					sap:creatable="false" sap:updatable="false" sap:deletable="false"
 					sap:pageable="false" sap:content-version="1" />
-				<EntitySet Name="CredentialSet" EntityType="ZY_WS1415_T2_MSA_SRV.Credential"
+				<EntitySet Name="CredentialSet" EntityType="ZY_WS1415_T2_STSA_SRV.Credential"
 					sap:creatable="false" sap:updatable="false" sap:deletable="false"
 					sap:pageable="false" sap:content-version="1" />
 			</EntityContainer>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
-				href="http://i67lp1.informatik.tu-muenchen.de:8000/sap/opu/odata/sap/ZY_WS1415_T2_MSA_SRV/$metadata" />
+				href="http://i67lp1.informatik.tu-muenchen.de:8000/sap/opu/odata/sap/ZY_WS1415_T2_STSA_SRV/$metadata" />
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
-				href="http://i67lp1.informatik.tu-muenchen.de:8000/sap/opu/odata/sap/ZY_WS1415_T2_MSA_SRV/$metadata" />
+				href="http://i67lp1.informatik.tu-muenchen.de:8000/sap/opu/odata/sap/ZY_WS1415_T2_STSA_SRV/$metadata" />
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>
