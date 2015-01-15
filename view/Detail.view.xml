@@ -1,0 +1,23 @@
+<sap.ui.core.mvc:View controllerName="MSA.view.Detail"
+    xmlns="sap.m"
+    xmlns:sap.ui.core.mvc="sap.ui.core.mvc" >
+    <Page navButtonPress="onNavBack" title="{i18n>detailTitle}" showNavButton="{device>/isPhone}">
+        <content>
+            <ObjectHeader id="objectHeader" title="{Description}" number="#{TicketId}" numberUnit="Prio:{Priority}" introActive="false" titleActive="false" iconActive="false">
+                <attributes>
+                    <ObjectAttribute id="created" title="Created" text="{CreateDate}" active="false"></ObjectAttribute>
+                    <ObjectAttribute id="resolved" title="Resolved" text="{ResolveDate}" active="false" visible="false"></ObjectAttribute>
+                    <ObjectAttribute title="Status" text="{Status}" active="false" class="statusAttribute"></ObjectAttribute>
+                    <ObjectAttribute id="closeTicket" text="Close Ticket" active="true" press="onCloseTicket" class="startProgressAttribute"></ObjectAttribute>
+                    <ObjectAttribute title="Machine" text="{TypeName}" active="true" press="onDisplayMachine"></ObjectAttribute>
+                    <ObjectAttribute title="Customer" text="{Title}" active="true" press="onDisplayCustomer"></ObjectAttribute>
+                    <ObjectAttribute title="Technician" text="{Firstname} {Lastname}" active="false" class="technicianAttribute"></ObjectAttribute>
+                    <ObjectAttribute id="reassignTechnician" text="(Re)assign Technician" active="true" press="onReassignTechnician" class="reassignTechnicianAttribute"></ObjectAttribute>
+                </attributes>
+            </ObjectHeader>
+        </content>
+        <footer>
+            <Toolbar></Toolbar>
+        </footer>
+    </Page>
+</sap.ui.core.mvc:View>

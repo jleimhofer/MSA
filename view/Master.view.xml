@@ -1,0 +1,50 @@
+<mvc:View
+	controllerName="MSA.view.Master"
+	displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page
+		id="page"
+		title="{i18n>masterTitle}">
+		<subHeader>
+			<Bar id="searchBar">
+				<contentMiddle>
+					<SearchField
+						id="searchField"
+						showRefreshButton="{device>/isNoTouch}"
+						placeholder="{i18n>masterSearchPlaceholder}"
+						liveChange="onLiveChange"
+						tooltip="{i18n>masterSearchTooltip}"
+						width="100%">
+					</SearchField>
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+		<content>
+			<List
+				id="list"
+				items="{/TroubleTicketViewSet}"
+				mode="{device>/listMode}"
+				noDataText="{i18n>masterListNoDataText}"
+				select="onSelect"
+				growing="true"
+				growingScrollToLoad="true">
+				<items>
+					<ObjectListItem
+						type="{device>/listItemType}"
+						press="onSelect" 
+						title="{Description}" 
+						number="#{TicketId}" 
+						numberUnit="{Title}"
+						intro="{Status}">
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+			    <Button id="btnMenu" text="Menu" press="onOpenMenu"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
