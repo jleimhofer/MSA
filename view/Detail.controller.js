@@ -107,7 +107,12 @@ MSA.util.Controller.extend("MSA.view.Detail", {
 
 	onNavBack : function() {
 		// This is only relevant when running on phone devices
-		this.getRouter().myNavBack("main");
+// 		this.getRouter().myNavBack("main");
+        this.getRouter().myNavToWithoutHash({ 
+    			currentView : this.getView(),
+    			targetViewName : "MSA.view.Master",
+    			targetViewType : "XML"
+    	});
 	},
 	
 	onSelect : function(oEvent) {

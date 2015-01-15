@@ -45,7 +45,7 @@ sap.ui.core.UIComponent.extend("MSA.Component", {
 					]
 				},
 				{
-					pattern : "Technician",
+					pattern : "",
 					name : "techMain",
 					view : "TechnicianMaster",
 					targetAggregation : "masterPages",
