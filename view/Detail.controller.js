@@ -159,8 +159,8 @@ MSA.util.Controller.extend("MSA.view.Detail", {
 	onReassignTechnician:function() {
 	    //The Template to use in the Dialog
 		var itemTemplate = new sap.m.StandardListItem({
-			title: "{Firstname} {Lastname}",
-			description: "#(Assigned Tickets): {NumAssigned}",
+			title: "{Firstname} {Lastname} (# Assigned Tickets: {NumAssigned})",
+			description: "{TechnicianId}",
 			info: "{TypeName}",
 			active: true
 	    });
@@ -240,7 +240,7 @@ MSA.util.Controller.extend("MSA.view.Detail", {
 	    
 		var locationView = sap.ui.view({
 			type:sap.ui.core.mvc.ViewType.XML, 
-			viewName:"STSA.view.Location"
+			viewName:"MSA.view.Location"
 		});
 		locationView.setModel(this.getView().getModel());
 

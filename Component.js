@@ -130,7 +130,7 @@ sap.ui.core.UIComponent.extend("MSA.Component", {
 		var oLoginDialog = new sap.m.Dialog({
 			modal : true,
 			content : [ loginView ],
-			title: "Technician"
+			title: "Manager"
 		});
         sap.ui.getCore().AppContext.LoginDialog = oLoginDialog;
 		
