@@ -32,7 +32,10 @@ MSA.util.Controller.extend("MSA.view.Master", {
 		// filter by technician with id 4
         // filters.push(new sap.ui.model.Filter("TechnicianId", sap.ui.model.FilterOperator.EQ, 4));
 		// update list binding
-// 		this.getView().byId("list").getBinding("items").filter(filters);
+//  		var sPath = this.getView().byId("list").getBinding("items").getPath();
+//         var oSorter = new sap.ui.model.Sorter(sPath, false);
+//         oSorter.fnCompare = this.compareStatus;
+//         this.getView().byId("list").getBinding("items").sort(oSorter);
 	},
 
 	onRouteMatched : function(oEvent) {
@@ -126,4 +129,5 @@ MSA.util.Controller.extend("MSA.view.Master", {
 		jQuery.sap.require("MSA.util.Utility");
 		openMenuDialog(this.getRouter(), this.getView());
     }
+    
 });

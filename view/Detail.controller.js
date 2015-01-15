@@ -7,6 +7,8 @@ MSA.util.Controller.extend("MSA.view.Detail", {
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
 
 		if(sap.ui.Device.system.phone) {
+		    //display menu
+		    this.getView().byId("menu").setVisible(true);
 			//don't wait for the master on a phone
 			this.oInitialLoadFinishedDeferred.resolve();
 		} else {
@@ -158,7 +160,7 @@ MSA.util.Controller.extend("MSA.view.Detail", {
 	    //The Template to use in the Dialog
 		var itemTemplate = new sap.m.StandardListItem({
 			title: "{Firstname} {Lastname}",
-			description: "{TechnicianId}",
+			description: "#(Assigned Tickets): {NumAssigned}",
 			info: "{TypeName}",
 			active: true
 	    });
@@ -310,5 +312,11 @@ MSA.util.Controller.extend("MSA.view.Detail", {
     	var typeId = bindingContext.getProperty("TypeId");
         oDialog.getBinding("items").filter([new sap.ui.model.Filter("TypeId", sap.ui.model.FilterOperator.EQ, typeId)]);
 		oDialog.open();
-	}
+	},
+	
+    onOpenMenu: function() {
+		jQuery.sap.require("MSA.util.Utility");
+		openMenuDialog(this.getRouter(), this.getView());
+    }
+
 });

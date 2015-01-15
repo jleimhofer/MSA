@@ -33,8 +33,8 @@
 					<ObjectListItem
 						type="{device>/listItemType}"
 						press="onSelect"
-						intro="{Firstname}"
-						title="{Lastname}" 
+						intro="# Assigned Tickets: {NumAssigned}"
+						title="{Firstname} {Lastname}" 
 						number="#{TechnicianId}" 
 						numberUnit="{TypeName}">
 					</ObjectListItem>
@@ -43,7 +43,11 @@
 		</content>
 		<footer>
 			<Toolbar>
-			    <Button id="btnMenu" text="Menu" press="onOpenMenu"/>
+			    <Bar design="Footer">
+			        <contentMiddle>
+			            <Button id="btnMenu" text="Menu" press="onOpenMenu"/>
+			         </contentMiddle>
+			    </Bar>
 			</Toolbar>
 		</footer>
 	</Page>

@@ -1,4 +1,4 @@
-STSA.util.Controller.extend("STSA.view.Manuals", {
+MSA.util.Controller.extend("MSA.view.Manuals", {
 
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.

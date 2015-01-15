@@ -5,8 +5,8 @@
         <content>
             <ObjectHeader id="objectHeader" title="{Firstname} {Lastname}" number="#{TechnicianId}" introActive="false" titleActive="false" iconActive="false">
                 <attributes>
-                    <!--<ObjectAttribute id="created" title="Created" text="{CreateDate}" active="false"></ObjectAttribute>-->
-                    <!--<ObjectAttribute id="resolved" title="Resolved" text="{ResolveDate}" active="false" visible="false"></ObjectAttribute>-->
+                    <ObjectAttribute id="assignedTickets" title="Assigned Tickets" text="{NumAssigned}" active="false"></ObjectAttribute>
+                    <ObjectAttribute id="resolvedTickets" title="Resolved Tickets" text="{NumResolved}" active="false"></ObjectAttribute>
                     <!--<ObjectAttribute title="Status" text="{Status}" active="false" class="statusAttribute"></ObjectAttribute>-->
                     <!--<ObjectAttribute id="startProgress" text="Start progress" active="true" press="onStartProgress" class="startProgressAttribute"></ObjectAttribute>-->
                     <!--<ObjectAttribute id="resolve" text="Resolve" active="true" press="onResolve" class="resolveAttribute"></ObjectAttribute>-->
@@ -14,17 +14,21 @@
                     <!--<ObjectAttribute title="Customer" text="{Title}" active="true" press="onDisplayCustomer"></ObjectAttribute>-->
                 </attributes>
             </ObjectHeader>
-            <Label id="commentsLabel" class="commentsLabel" text="Comments"></Label>
-            <TextArea id="newComment" width="100%" placeholder="New Comment ..." height="68px" wrapping="None"></TextArea>
-            <Link id="addComment" class="commentAddLink" press="onAddComment" text="+Add"></Link>
-            <List id="commentList" select="onSelect" mode="{device>/listMode}" noDataText="{i18n>masterListNoDataText}" growing="true" growingScrollToLoad="true" items="{/CommentSet}">
+            <Label id="ticketsLabel" class="ticketsLabel" text="Tickets"></Label>
+            <List id="ticketList" select="onSelect" mode="{device>/listMode}" noDataText="{i18n>masterListNoDataText}" growing="true" growingScrollToLoad="true" items="{/TroubleTicketViewSet}">
                 <items>
-                    <ObjectListItem press="onSelect" type="{device>/listItemType}" counter="0" title="{Content}" markFavorite="false" markFlagged="false" showMarkers="false"></ObjectListItem>
+                    <ObjectListItem press="onSelect" type="{device>/listItemType}" counter="0" title="{Description}" intro="Prio: {Priority}" number="#{TicketId}" numberUnit="{Status}"  markFavorite="false" markFlagged="false" showMarkers="false"></ObjectListItem>
                 </items>
             </List>
         </content>
         <footer>
-            <Toolbar></Toolbar>
+            <Toolbar>
+			    <Bar design="Footer"  id="menu" visible="false">
+			        <contentMiddle>
+			            <Button id="btnMenu" text="Menu" press="onOpenMenu"/>
+			         </contentMiddle>
+			    </Bar>
+			</Toolbar>
         </footer>
     </Page>
 </sap.ui.core.mvc:View>

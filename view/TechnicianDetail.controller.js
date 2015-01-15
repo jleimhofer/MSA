@@ -7,6 +7,8 @@ MSA.util.Controller.extend("MSA.view.TechnicianDetail", {
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
 
 		if(sap.ui.Device.system.phone) {
+		    //display menu in the footer
+		    this.getView().byId("menu").setVisible(true);
 			//don't wait for the master on a phone
 			this.oInitialLoadFinishedDeferred.resolve();
 		} else {
@@ -96,10 +98,10 @@ MSA.util.Controller.extend("MSA.view.TechnicianDetail", {
 // 		this.getView().byId("startProgress").setVisible(startProgressVisible);
 // 		this.getView().byId("resolve").setVisible(resolveVisible);
 		
-// 		var ticketId = this.getView().getModel().getProperty(sEntityPath + "/TicketId");
-// 		// update list binding
-// 		// filter comments by current ticket
-// 		this.getView().byId("commentList").getBinding("items").filter([new sap.ui.model.Filter("TicketId", sap.ui.model.FilterOperator.EQ, ticketId)]);
+ 		var technicianId = this.getView().getModel().getProperty(sEntityPath + "/TechnicianId");
+ 		// update list binding
+ 		// filter comments by current ticket
+ 		this.getView().byId("ticketList").getBinding("items").filter([new sap.ui.model.Filter("TechnicianId", sap.ui.model.FilterOperator.EQ, technicianId)]);
 	},
 
 	fireDetailNotFound : function () {
@@ -311,5 +313,11 @@ MSA.util.Controller.extend("MSA.view.TechnicianDetail", {
 		}
 		var oDialog = sap.ui.getCore().AppContext.ManualDialog;
 		oDialog.open();
-	}
+	},
+	
+    onOpenMenu: function() {
+		jQuery.sap.require("MSA.util.Utility");
+		openMenuDialog(this.getRouter(), this.getView());
+    }
+
 });

@@ -17,7 +17,13 @@
             </ObjectHeader>
         </content>
         <footer>
-            <Toolbar></Toolbar>
+            <Toolbar>
+			    <Bar design="Footer" id="menu" visible="false">
+			        <contentMiddle>
+			            <Button id="btnMenu" text="Menu" press="onOpenMenu"/>
+			         </contentMiddle>
+			    </Bar>
+			</Toolbar>
         </footer>
     </Page>
 </sap.ui.core.mvc:View>

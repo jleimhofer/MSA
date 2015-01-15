@@ -1,4 +1,4 @@
-<core:View height="100%" controllerName="STSA.view.Login"
+<core:View height="100%" controllerName="MSA.view.Login"
 	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page id="loginPage" enableScrolling="false" title="Login">

@@ -36,14 +36,18 @@
 						title="{Description}" 
 						number="#{TicketId}" 
 						numberUnit="{Title}"
-						intro="{Status}">
+						intro="{Status} (Prio: {Priority})">
 					</ObjectListItem>
 				</items>
 			</List>
 		</content>
 		<footer>
 			<Toolbar>
-			    <Button id="btnMenu" text="Menu" press="onOpenMenu"/>
+			    <Bar design="Footer">
+			        <contentMiddle>
+			            <Button id="btnMenu" text="Menu" press="onOpenMenu"/>
+			         </contentMiddle>
+			    </Bar>
 			</Toolbar>
 		</footer>
 	</Page>

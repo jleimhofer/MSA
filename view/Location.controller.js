@@ -1,7 +1,7 @@
-jQuery.sap.require("STSA.util.Formatter");
-jQuery.sap.require("STSA.util.Controller");
+jQuery.sap.require("MSA.util.Formatter");
+jQuery.sap.require("MSA.util.Controller");
 
-STSA.util.Controller.extend("STSA.view.Location", {
+MSA.util.Controller.extend("MSA.view.Location", {
 
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.

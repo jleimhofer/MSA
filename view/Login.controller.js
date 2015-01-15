@@ -1,13 +1,13 @@
-jQuery.sap.require("STSA.util.Formatter");
-jQuery.sap.require("STSA.util.Controller");
+jQuery.sap.require("MSA.util.Formatter");
+jQuery.sap.require("MSA.util.Controller");
 
-STSA.util.Controller.extend("STSA.view.Login",  {  
+MSA.util.Controller.extend("MSA.view.Login",  {  
     actLogin: function () {  
         var oEntry = {};
         oEntry.Username = this.byId("inpLogin").getValue();
         oEntry.Password = CryptoJS.SHA1(this.byId("inpPWD").getValue().toUpperCase()).toString();
-        // type 1 for technician login
-        oEntry.Type = 1;
+        // type 2 for manager login
+        oEntry.Type = 2;
         oEntry.Valid = 0;
         oEntry.Id = 0;
 
@@ -19,7 +19,7 @@ STSA.util.Controller.extend("STSA.view.Login",  {
             if(valid)
             {
                 sap.ui.getCore().AppContext.ValidUser = valid;
-                sap.ui.getCore().AppContext.TechnicianId = success.Id;
+                sap.ui.getCore().AppContext.ManagerId = success.Id;
                 sap.ui.getCore().AppContext.LoginDialog.close();
             }
             else
