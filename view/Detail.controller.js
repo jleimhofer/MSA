@@ -7,8 +7,6 @@ MSA.util.Controller.extend("MSA.view.Detail", {
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
 
 		if(sap.ui.Device.system.phone) {
-		    //display menu
-		    this.getView().byId("menu").setVisible(true);
 			//don't wait for the master on a phone
 			this.oInitialLoadFinishedDeferred.resolve();
 		} else {
@@ -24,6 +22,10 @@ MSA.util.Controller.extend("MSA.view.Detail", {
 			this.bindView(oData.oListItem.getBindingContext().getPath());
 			this.getView().setBusy(false);
 			this.oInitialLoadFinishedDeferred.resolve();
+		}
+		if(sap.ui.Device.system.phone) {
+		    //display menu
+    	    this.getView().byId("menu").setVisible(true);
 		}
 	},
 
