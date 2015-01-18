@@ -23,9 +23,9 @@
         </content>
         <footer>
             <Toolbar>
-			    <Bar design="Footer"  id="menu" visible="false">
+			    <Bar design="Footer">
 			        <contentMiddle>
-			            <Button id="btnMenu" text="Menu" press="onOpenMenu"/>
+			            <Button id="btnMenu" text="Menu" press="onOpenMenu" visible="false"/>
 			         </contentMiddle>
 			    </Bar>
 			</Toolbar>
