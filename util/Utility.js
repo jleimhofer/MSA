@@ -51,7 +51,6 @@ function openMenuDialog(router, view) {
     			targetViewType : "XML",
     			isMaster: true
     		});
-            router.initialize();
         });
         sap.ui.getCore().AppContext.MenuDialog = oMenuDialog;
  		oMenuDialog.open();
