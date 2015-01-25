@@ -7,7 +7,7 @@
                 <attributes>
                     <ObjectAttribute id="assignedTickets" title="Assigned Tickets" text="{NumAssigned}" active="false"></ObjectAttribute>
                     <ObjectAttribute id="resolvedTickets" title="Resolved Tickets" text="{NumResolved}" active="false"></ObjectAttribute>
-                    <!--<ObjectAttribute title="Status" text="{Status}" active="false" class="statusAttribute"></ObjectAttribute>-->
+                    <ObjectAttribute id="efficiency" title="Efficiency" text="" active="false"></ObjectAttribute>
                     <!--<ObjectAttribute id="startProgress" text="Start progress" active="true" press="onStartProgress" class="startProgressAttribute"></ObjectAttribute>-->
                     <!--<ObjectAttribute id="resolve" text="Resolve" active="true" press="onResolve" class="resolveAttribute"></ObjectAttribute>-->
                     <ObjectAttribute title="Machine Type" text="{TypeName}" active="true" press="onDisplayMachine"></ObjectAttribute>

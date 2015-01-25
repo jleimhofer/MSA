@@ -24,6 +24,11 @@ MSA.util.Controller.extend("MSA.view.TechnicianDetail", {
 			this.bindView(oData.oListItem.getBindingContext().getPath());
 			this.getView().setBusy(false);
 			this.oInitialLoadFinishedDeferred.resolve();
+            var bindingContext = this.getView().getBindingContext();
+    		var assignedTickets = parseInt(bindingContext.getProperty("NumAssigned"));
+    		var resolvedTickets = parseInt(bindingContext.getProperty("NumResolved"));
+    		var efficiency = resolvedTickets / (assignedTickets + resolvedTickets)
+    		this.getView().byId("efficiency").setText();
 		}
 	},
 
