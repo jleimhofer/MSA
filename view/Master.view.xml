@@ -23,7 +23,7 @@
 		<content>
 			<List
 				id="list"
-				items="{/TroubleTicketViewSet}"
+				items="{/TroubleTicketView2Set}"
 				mode="{device>/listMode}"
 				noDataText="{i18n>masterListNoDataText}"
 				select="onSelect"
@@ -36,7 +36,7 @@
 						title="{Description}" 
 						number="#{TicketId}" 
 						numberUnit="{Title}"
-						intro="{Status} (Prio: {Priority})">
+						intro="{Status} (Prio2: {Prioritystr})">
 					</ObjectListItem>
 				</items>
 			</List>

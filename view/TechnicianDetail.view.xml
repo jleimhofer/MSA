@@ -15,9 +15,9 @@
                 </attributes>
             </ObjectHeader>
             <Label id="ticketsLabel" class="ticketsLabel" text="Tickets"></Label>
-            <List id="ticketList" select="onSelect" mode="{device>/listMode}" noDataText="{i18n>masterListNoDataText}" growing="true" growingScrollToLoad="true" items="{/TroubleTicketViewSet}">
+            <List id="ticketList" select="onSelect" mode="{device>/listMode}" noDataText="{i18n>masterListNoDataText}" growing="true" growingScrollToLoad="true" items="{/TroubleTicketView2Set}">
                 <items>
-                    <ObjectListItem press="onSelect" type="{device>/listItemType}" counter="0" title="{Description}" intro="Prio: {Priority}" number="#{TicketId}" numberUnit="{Status}"  markFavorite="false" markFlagged="false" showMarkers="false"></ObjectListItem>
+                    <ObjectListItem press="onSelect" type="{device>/listItemType}" counter="0" title="{Description}" intro="Prio: {Prioritystr}" number="#{TicketId}" numberUnit="{Status}"  markFavorite="false" markFlagged="false" showMarkers="false"></ObjectListItem>
                 </items>
             </List>
         </content>

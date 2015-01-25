@@ -3,7 +3,7 @@
     xmlns:sap.ui.core.mvc="sap.ui.core.mvc" >
     <Page navButtonPress="onNavBack" title="{i18n>detailTitle}" showNavButton="{device>/isPhone}">
         <content>
-            <ObjectHeader id="objectHeader" title="{Description}" number="#{TicketId}" numberUnit="Prio:{Priority}" introActive="false" titleActive="false" iconActive="false">
+            <ObjectHeader id="objectHeader" title="{Description}" number="#{TicketId}" numberUnit="Prio:{Prioritystr}" introActive="false" titleActive="false" iconActive="false">
                 <attributes>
                     <ObjectAttribute id="created" title="Created" text="{CreateDate}" active="false"></ObjectAttribute>
                     <ObjectAttribute id="resolved" title="Resolved" text="{ResolveDate}" active="false" visible="false"></ObjectAttribute>

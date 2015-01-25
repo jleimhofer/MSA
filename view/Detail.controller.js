@@ -150,7 +150,7 @@ MSA.util.Controller.extend("MSA.view.Detail", {
         // create new record        
         var oModel = this.getView().getModel();
         jQuery.sap.require("sap.ui.commons.MessageBox");
-        oModel.update("/TroubleTicketSet(" + ticketId + ")", oEntry, null, function(){
+        oModel.update("/TroubleTicket2Set(" + ticketId + ")", oEntry, null, function(){
             sap.ui.commons.MessageBox.alert("Ticket successfully updated!");
         },function(){
             sap.ui.commons.MessageBox.alert("Error occured!");
@@ -212,7 +212,7 @@ MSA.util.Controller.extend("MSA.view.Detail", {
                 // create new record        
                 var oModel = self.getView().getModel();
                 jQuery.sap.require("sap.ui.commons.MessageBox");
-                oModel.update("/TroubleTicketSet(" + ticketId + ")", oEntry, null, function(){
+                oModel.update("/TroubleTicket2Set(" + ticketId + ")", oEntry, null, function(){
                     sap.ui.commons.MessageBox.alert("Ticket successfully updated!");
                 },function(){
                     sap.ui.commons.MessageBox.alert("Error occured!");
