@@ -8,6 +8,7 @@ MSA.util.Controller.extend("MSA.view.Detail", {
 
 		if(sap.ui.Device.system.phone) {
 		    //display menu
+    	    this.getView().byId("btnLogout").setVisible(true);
     	    this.getView().byId("btnMenu").setVisible(true);
 			//don't wait for the master on a phone
 			this.oInitialLoadFinishedDeferred.resolve();
@@ -150,7 +151,7 @@ MSA.util.Controller.extend("MSA.view.Detail", {
         // create new record        
         var oModel = this.getView().getModel();
         jQuery.sap.require("sap.ui.commons.MessageBox");
-        oModel.update("/TroubleTicket2Set(" + ticketId + ")", oEntry, null, function(){
+        oModel.update("/TroubleTicketSet(" + ticketId + ")", oEntry, null, function(){
             sap.ui.commons.MessageBox.alert("Ticket successfully updated!");
         },function(){
             sap.ui.commons.MessageBox.alert("Error occured!");
@@ -164,7 +165,7 @@ MSA.util.Controller.extend("MSA.view.Detail", {
 	onReassignTechnician:function() {
 	    //The Template to use in the Dialog
 		var itemTemplate = new sap.m.StandardListItem({
-			title: "{Firstname} {Lastname} (# Assigned Tickets: {NumAssigned})",
+			title: "{Firstname} {Lastname} (# Active Tickets: {NumAssigned})",
 			description: "{TechnicianId}",
 			info: "{TypeName}",
 			active: true
@@ -212,7 +213,7 @@ MSA.util.Controller.extend("MSA.view.Detail", {
                 // create new record        
                 var oModel = self.getView().getModel();
                 jQuery.sap.require("sap.ui.commons.MessageBox");
-                oModel.update("/TroubleTicket2Set(" + ticketId + ")", oEntry, null, function(){
+                oModel.update("/TroubleTicketSet(" + ticketId + ")", oEntry, null, function(){
                     sap.ui.commons.MessageBox.alert("Ticket successfully updated!");
                 },function(){
                     sap.ui.commons.MessageBox.alert("Error occured!");
@@ -322,6 +323,12 @@ MSA.util.Controller.extend("MSA.view.Detail", {
     onOpenMenu: function() {
 		jQuery.sap.require("MSA.util.Utility");
 		openMenuDialog(this.getRouter(), this.getView());
+    },
+    
+    onLogout: function() {
+        sap.ui.getCore().AppContext.ValidUser = 0;
+        sap.ui.getCore().AppContext.Manager = 0;
+		jQuery.sap.require("MSA.util.Utility");
+		openLoginDialog(this.getRouter(), this.getView().getModel(), this.getView(), null);
     }
-
 });

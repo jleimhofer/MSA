@@ -5,27 +5,30 @@
         <content>
             <ObjectHeader id="objectHeader" title="{Firstname} {Lastname}" number="#{TechnicianId}" introActive="false" titleActive="false" iconActive="false">
                 <attributes>
-                    <ObjectAttribute id="assignedTickets" title="Assigned Tickets" text="{NumAssigned}" active="false"></ObjectAttribute>
+                    <ObjectAttribute id="assignedTickets" title="Active Tickets" text="{NumAssigned}" active="false"></ObjectAttribute>
                     <ObjectAttribute id="resolvedTickets" title="Resolved Tickets" text="{NumResolved}" active="false"></ObjectAttribute>
-                    <ObjectAttribute id="efficiency" title="Efficiency" text="" active="false"></ObjectAttribute>
+                    <ObjectAttribute id="efficiency" title="Efficiency (Last Month)" text="" active="false"></ObjectAttribute>
                     <!--<ObjectAttribute id="startProgress" text="Start progress" active="true" press="onStartProgress" class="startProgressAttribute"></ObjectAttribute>-->
                     <!--<ObjectAttribute id="resolve" text="Resolve" active="true" press="onResolve" class="resolveAttribute"></ObjectAttribute>-->
                     <ObjectAttribute title="Machine Type" text="{TypeName}" active="true" press="onDisplayMachine"></ObjectAttribute>
                     <!--<ObjectAttribute title="Customer" text="{Title}" active="true" press="onDisplayCustomer"></ObjectAttribute>-->
                 </attributes>
             </ObjectHeader>
-            <Label id="ticketsLabel" class="ticketsLabel" text="Tickets"></Label>
+            <Label id="ticketsLabel" class="ticketsLabel" text="Active Tickets"></Label>
             <List id="ticketList" select="onSelect" mode="{device>/listMode}" noDataText="{i18n>masterListNoDataText}" growing="true" growingScrollToLoad="true" items="{/TroubleTicketView2Set}">
                 <items>
-                    <ObjectListItem press="onSelect" type="{device>/listItemType}" counter="0" title="{Description}" intro="Prio: {Prioritystr}" number="#{TicketId}" numberUnit="{Status}"  markFavorite="false" markFlagged="false" showMarkers="false"></ObjectListItem>
+                    <ObjectListItem icon="sap-icon://document" press="onSelect" type="{device>/listItemType}" counter="0" title="{Description}" intro="Prio: {Prioritystr}" number="#{TicketId}" numberUnit="{Status}"  markFavorite="false" markFlagged="false" showMarkers="false"></ObjectListItem>
                 </items>
             </List>
         </content>
         <footer>
             <Toolbar>
 			    <Bar design="Footer">
+			         <contentLeft>
+    			             <Button id="btnLogout" icon="sap-icon://log" press="onLogout" visible="false"/>
+    		         </contentLeft>
 			        <contentMiddle>
-			            <Button id="btnMenu" text="Menu" press="onOpenMenu" visible="false"/>
+			            <Button id="btnMenu" icon="sap-icon://menu" press="onOpenMenu" visible="false"/>
 			         </contentMiddle>
 			    </Bar>
 			</Toolbar>

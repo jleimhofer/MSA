@@ -9,6 +9,7 @@ MSA.util.Controller.extend("MSA.view.TechnicianDetail", {
 		if(sap.ui.Device.system.phone) {
 		    //display menu
     	    this.getView().byId("btnMenu").setVisible(true);
+    	    this.getView().byId("btnLogout").setVisible(true);
 			//don't wait for the master on a phone
 			this.oInitialLoadFinishedDeferred.resolve();
 		} else {
@@ -24,11 +25,6 @@ MSA.util.Controller.extend("MSA.view.TechnicianDetail", {
 			this.bindView(oData.oListItem.getBindingContext().getPath());
 			this.getView().setBusy(false);
 			this.oInitialLoadFinishedDeferred.resolve();
-            var bindingContext = this.getView().getBindingContext();
-    		var assignedTickets = parseInt(bindingContext.getProperty("NumAssigned"));
-    		var resolvedTickets = parseInt(bindingContext.getProperty("NumResolved"));
-    		var efficiency = resolvedTickets / (assignedTickets + resolvedTickets)
-    		// this.getView().byId("efficiency").setText();
 		}
 	},
 
@@ -83,29 +79,24 @@ MSA.util.Controller.extend("MSA.view.TechnicianDetail", {
 	fireDetailChanged : function (sEntityPath) {
 		this.getEventBus().publish("Detail", "Changed", { sEntityPath : sEntityPath });
 		
-		// show status buttons according to current status
         var bindingContext = this.getView().getBindingContext();
-// 		var status = bindingContext.getProperty("Status");
-// 		var startProgressVisible = true;
-// 		var resolveVisible = true;
-// 		if(status === "IN PROGRESS")
-// 		{
-// 		    startProgressVisible = false;
-// 		}
-// 		else if(status === "RESOLVED")
-// 		{
-// 		    startProgressVisible = false;
-// 		    resolveVisible = false;
-// 	        this.getView().byId("resolved").setVisible(true);
-// 	        this.getView().byId("created").setVisible(false);
-// 		}
+		var assignedTickets = parseInt(bindingContext.getProperty("NumAssigned"));
+		var resolvedTickets = parseInt(bindingContext.getProperty("NumResolved"));
+		var numTicketsTotal = assignedTickets + resolvedTickets;
+		var efficiency;
+		if(numTicketsTotal === 0)
+		{
+		    efficiency = 0;
+		}
+		else
+		{
+		    efficiency = resolvedTickets / numTicketsTotal; 
+		}
+		this.getView().byId("efficiency").setText(efficiency * 100 + "%");
 
-// 		this.getView().byId("startProgress").setVisible(startProgressVisible);
-// 		this.getView().byId("resolve").setVisible(resolveVisible);
-		
  		var technicianId = this.getView().getModel().getProperty(sEntityPath + "/TechnicianId");
  		// update list binding
- 		// filter comments by current ticket
+ 		// filter tickets by current technician
  		this.getView().byId("ticketList").getBinding("items").filter([new sap.ui.model.Filter("TechnicianId", sap.ui.model.FilterOperator.EQ, technicianId)]);
 	},
 
@@ -328,6 +319,13 @@ MSA.util.Controller.extend("MSA.view.TechnicianDetail", {
     onOpenMenu: function() {
 		jQuery.sap.require("MSA.util.Utility");
 		openMenuDialog(this.getRouter(), this.getView());
+    },
+    
+    onLogout: function() {
+        sap.ui.getCore().AppContext.ValidUser = 0;
+        sap.ui.getCore().AppContext.Manager = 0;
+		jQuery.sap.require("MSA.util.Utility");
+		openLoginDialog(this.getRouter(), this.getView().getModel(), this.getView(), null);
     }
 
 });

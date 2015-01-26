@@ -18,6 +18,11 @@
         type="Monitor"
         title="Manage Technicians"
         press="onManageTechnicians"/>
+      <StandardTile
+        icon="sap-icon://bar-chart"
+        type="Monitor"
+        title="Reports"
+        press="onShowReports"/>
     </TileContainer>
   </Page>
 </mvc:View>

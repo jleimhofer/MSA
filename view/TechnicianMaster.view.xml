@@ -31,9 +31,10 @@
 				growingScrollToLoad="true">
 				<items>
 					<ObjectListItem
+					    icon="sap-icon://person-placeholder"
 						type="{device>/listItemType}"
 						press="onSelect"
-						intro="# Assigned Tickets: {NumAssigned}"
+						intro="# Active Tickets: {NumAssigned}"
 						title="{Firstname} {Lastname}" 
 						number="#{TechnicianId}" 
 						numberUnit="{TypeName}">
@@ -44,8 +45,11 @@
 		<footer>
 			<Toolbar>
 			    <Bar design="Footer">
+			         <contentLeft>
+    			             <Button id="btnLogout" icon="sap-icon://log" press="onLogout"/>
+    		         </contentLeft>
 			        <contentMiddle>
-			            <Button id="btnMenu" text="Menu" press="onOpenMenu"/>
+			            <Button id="btnMenu" icon="sap-icon://menu" press="onOpenMenu"/>
 			         </contentMiddle>
 			    </Bar>
 			</Toolbar>

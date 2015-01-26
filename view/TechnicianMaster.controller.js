@@ -125,5 +125,12 @@ MSA.util.Controller.extend("MSA.view.TechnicianMaster", {
     onOpenMenu: function() {
 		jQuery.sap.require("MSA.util.Utility");
 		openMenuDialog(this.getRouter(), this.getView());
+    },
+    
+    onLogout: function() {
+        sap.ui.getCore().AppContext.ValidUser = 0;
+        sap.ui.getCore().AppContext.Manager = 0;
+		jQuery.sap.require("MSA.util.Utility");
+		openLoginDialog(this.getRouter(), this.getView().getModel(), this.getView(), null);
     }
 });

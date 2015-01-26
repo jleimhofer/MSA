@@ -19,8 +19,11 @@
         <footer>
             <Toolbar>
 			    <Bar design="Footer">
-			        <contentMiddle>
-			            <Button id="btnMenu" text="Menu" press="onOpenMenu" visible="false"/>
+			         <contentLeft>
+    			             <Button id="btnLogout" icon="sap-icon://log" press="onLogout" visible="false"/>
+    		         </contentLeft>
+    		         <contentMiddle>
+			            <Button id="btnMenu" icon="sap-icon://menu" press="onOpenMenu" visible="false"/>
 			         </contentMiddle>
 			    </Bar>
 			</Toolbar>

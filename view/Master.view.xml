@@ -23,7 +23,7 @@
 		<content>
 			<List
 				id="list"
-				items="{/TroubleTicketView2Set}"
+				items="{/TroubleTicketViewSet}"
 				mode="{device>/listMode}"
 				noDataText="{i18n>masterListNoDataText}"
 				select="onSelect"
@@ -31,12 +31,13 @@
 				growingScrollToLoad="true">
 				<items>
 					<ObjectListItem
+					    icon="sap-icon://document"
 						type="{device>/listItemType}"
 						press="onSelect" 
 						title="{Description}" 
 						number="#{TicketId}" 
-						numberUnit="{Title}"
-						intro="{Status} (Prio2: {Prioritystr})">
+						numberUnit="{Status} (Prio: {Prioritystr})"
+						intro="{Title} ({TypeName})">
 					</ObjectListItem>
 				</items>
 			</List>
@@ -44,8 +45,11 @@
 		<footer>
 			<Toolbar>
 			    <Bar design="Footer">
+    		         <contentLeft>
+    			             <Button id="btnLogout" icon="sap-icon://log" press="onLogout"/>
+    		         </contentLeft>
 			        <contentMiddle>
-			            <Button id="btnMenu" text="Menu" press="onOpenMenu"/>
+			            <Button id="btnMenu" icon="sap-icon://menu" press="onOpenMenu"/>
 			         </contentMiddle>
 			    </Bar>
 			</Toolbar>
