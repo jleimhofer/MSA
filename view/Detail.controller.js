@@ -165,6 +165,7 @@ MSA.util.Controller.extend("MSA.view.Detail", {
 	onReassignTechnician:function() {
 	    //The Template to use in the Dialog
 		var itemTemplate = new sap.m.StandardListItem({
+		    icon: "sap-icon://person-placeholder",
 			title: "{Firstname} {Lastname} (# Active Tickets: {NumAssigned})",
 			description: "{TechnicianId}",
 			info: "{TypeName}",
